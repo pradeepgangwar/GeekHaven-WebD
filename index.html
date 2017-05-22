@@ -88,15 +88,19 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$("#title").hide();
+				$("#arr").hide();
 				$("#title").fadeIn(3500);
 				$("#motto").hide();
 				$("#motto").fadeIn(12000);
+
 
 				function bgchange() {
 					$("body").css("background-color", "black");
 					$("body").css("color", "white");
 				}
 				setInterval(bgchange, 1000);
+
+				$("#arr").fadeIn(14000);
 
 			});
 		</script>
@@ -119,7 +123,7 @@
   		<h2 id="title">WEB DEVELOPMENT WING</h2>
   		<h5 id="motto"><b>" We make stuff happen "</b></h5>
   	</div>
-  	<a href="#"><div class="bounce"><i class="fa fa-angle-double-down"></i></div></a>
+  	<a href="#"><div class="bounce" id="arr"><i class="fa fa-angle-double-down"></i></div></a>
   </div>
   
         
