@@ -19,10 +19,26 @@
 			.nav-wrapper {
 				background-color: white;
 			}
+			a {
+				text-decoration: none;
+			}
+
+			#logo {
+				margin-left: 5%;
+				color: #304352;
+				text-decoration: none;
+			}
 
 			.container {
 				  font-family: 'Source Sans Pro', sans-serif;
 			}
+
+			#one,
+			#two,
+			#three {
+				color: #304352;
+			}
+
 			#content {
 				text-align: center;
 				margin: 0 auto;
@@ -102,6 +118,12 @@
 
 				$("#arr").fadeIn(14000);
 
+				function navBar() {
+					$(".nav-wrapper").css("background-color", "black");
+					$("#logo,#one,#two,#three").css("color", "white");
+					$("#one,#two,#three").css("font-weight", "700");
+				}
+				setInterval(navBar, 1500);
 			});
 		</script>
 </head>
@@ -109,11 +131,11 @@
 	<div class="navbar-fixed">
 	<nav>
     <div class="nav-wrapper">
-      <a href="http://geekhaven.iiita.ac.in/" class="brand-logo" style="margin-left: 5%;color: #304352;">GEEKHAVEN</a>
+      <a href="http://geekhaven.iiita.ac.in/" class="brand-logo" id="logo">GEEKHAVEN</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 5%;">
-        <li><a href="#home" style="color: #304352;">HOME</a></li>
-        <li><a href="#team" style="color: #304352;">TEAM</a></li>
-        <li><a href="#contact" style="color: #304352;">CONTACT</a></li>
+        <li><a href="#home" id="one">HOME</a></li>
+        <li><a href="#team" id="two">TEAM</a></li>
+        <li><a href="#contact" id="three">CONTACT</a></li>
       </ul>
     </div>
   </nav>
