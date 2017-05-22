@@ -15,6 +15,7 @@
 				/*background-image: url("pic.jpg");*/
 				background-size: cover;
 				background-position: center;
+				background-repeat: none;
 			}
 			.nav-wrapper {
 				background-color: white;
@@ -108,6 +109,8 @@
 				$("#title").fadeIn(3500);
 				$("#motto").hide();
 				$("#motto").fadeIn(12000);
+				$("#logo,#one,#two,#three").hide();
+				$("#logo,#one,#two,#three").fadeIn(10000);
 
 
 				function bgchange() {
@@ -124,6 +127,10 @@
 					$("#one,#two,#three").css("font-weight", "700");
 				}
 				setInterval(navBar, 1000);
+
+				// $("#one,#two,#three").on("hover",function() {
+				// 	this.css("background-color" "#c0c0c0");
+				// });
 			});
 		</script>
 </head>
