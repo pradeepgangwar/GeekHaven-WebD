@@ -1,159 +1,54 @@
 <!DOCTYPE html>
+ 
 <html>
+
 <head>
-	<title>WebD</title>
+	<title> Web Development, GeekHaven </title>
+
 	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Changa:200|Source+Sans+Pro:200" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" media="screen,projection">
+	<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"-->
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
-		<style type="text/css">
-			body {
-				font-family: Changa;
-				/*background-image: url("pic.jpg");*/
-				background-size: cover;
-				background-position: center;
-				background-repeat: none;
-			}
-			.nav-wrapper {
-				background-color: white;
-			}
-			a {
-				text-decoration: none;
-			}
-
-			#logo {
-				margin-left: 5%;
-				color: #304352;
-				text-decoration: none;
-			}
-
-			.container {
-				  font-family: 'Source Sans Pro', sans-serif;
-			}
-
-			#one,
-			#two,
-			#three {
-				color: #304352;
-			}
-
-			#content {
-				text-align: center;
-				margin: 0 auto;
-				padding-top: 20%;
-				letter-spacing: 2px;
-			}
-			.fa {
- 			width: 60px;
- 			display: block;
- 			text-align: center;
- 			color:#ffffff;
- 			font:normal 45px 'FontAwesome';
- 			line-height:60px;
- 			text-rendering: auto;
- 			padding-right: 5px;
-            -webkit-font-smoothing: antialiased;
-		}
-		.fa-angle-double-down:before {content: "\f103";}
-        
-        .bounce {
- 			position: absolute;
- 			bottom: 30px;
- 			left: 50% ;
- 			width: 60px;
- 			height: 60px ;
- 			margin-left:-30px;
- 			border: 2px solid #ffffff;
-           -webkit-border-radius:50%;
-           -moz-border-radius:50%;
-           -ms-border-radius:50%;
-		    border-radius:50%;
-		    text-align: center;
- 			animation: bounce 2s infinite;
-            -webkit-animation: bounce 2s infinite;
-            -moz-animation: bounce 2s infinite;
-            -o-animation: bounce 2s infinite;
- 		}
- 
-		@-webkit-keyframes bounce {
-			 0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
-			 40% {-webkit-transform: translateY(-30px);}
- 			 60% {-webkit-transform: translateY(-15px);}
-		}
- 
-		@-moz-keyframes bounce {
-			 0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
- 			40% {-moz-transform: translateY(-30px);}
- 			60% {-moz-transform: translateY(-15px);}
-		}	
- 
-		@-o-keyframes bounce {
-			 0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
- 			40% {-o-transform: translateY(-30px);}
- 			60% {-o-transform: translateY(-15px);}
-		}
-		@keyframes bounce {
- 			0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
- 		    40% {transform: translateY(-30px);}
- 			60% {transform: translateY(-15px);}
-		}
-
-		</style>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$("#title").hide();
-				$("#arr").hide();
-				$("#title").fadeIn(3500);
-				$("#motto").hide();
-				$("#motto").fadeIn(12000);
-				$("#logo,#one,#two,#three").hide();
-				$("#logo,#one,#two,#three").fadeIn(10000);
-
-
-				function bgchange() {
-					$("body").css("background-color", "black");
-					$("body").css("color", "white");
-				}
-				setInterval(bgchange, 1000);
-
-				$("#arr").fadeIn(14000);
-
-				function navBar() {
-					$(".nav-wrapper").css("background-color", "black");
-					$("#logo,#one,#two,#three").css("color", "white");
-					$("#one,#two,#three").css("font-weight", "700");
-				}
-				setInterval(navBar, 1000);
-
-				// $("#one,#two,#three").on("hover",function() {
-				// 	this.css("background-color" "#c0c0c0");
-				// });
-			});
-		</script>
+	<link rel="stylesheet" href="css/style.css"/>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="WebPage of Web Development wing, under the Technical Society, GeekHaven, IIIT Allahabad"/>
 </head>
+
 <body>
-	<div class="navbar-fixed">
+
+<!-- Landing Page -->
+
+<div class="navbar-fixed">
 	<nav>
-    <div class="nav-wrapper">
-      <a href="http://geekhaven.iiita.ac.in/" class="brand-logo" id="logo">GEEKHAVEN</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 5%;">
-        <li><a href="#home" id="one">HOME</a></li>
-        <li><a href="#team" id="two">TEAM</a></li>
-        <li><a href="#contact" id="three">CONTACT</a></li>
-      </ul>
-    </div>
+    	<div class="nav-wrapper">
+      		<a href="http://geekhaven.iiita.ac.in/" class="brand-logo" id="logo">GEEKHAVEN</a>
+      		<ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 5%;">
+        		<li><a href="#home" id="one">HOME</a></li>
+        		<li><a href="#team" id="two">TEAM</a></li>
+        		<li><a href="#contact" id="three">CONTACT</a></li>
+      		</ul>
+    	</div>
   </nav>
-  </div>
-      <div class="container">
+</div>
+<div class="container">
   	<div id="content">
   		<h2 id="title">WEB DEVELOPMENT WING</h2>
   		<h5 id="motto"><b>" We make stuff happen "</b></h5>
   	</div>
   	<a href="#"><div class="bounce" id="arr"><i class="fa fa-angle-double-down"></i></div></a>
-  </div>
+</div>
+
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script> 
+<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script-->
   
         
 </body>
