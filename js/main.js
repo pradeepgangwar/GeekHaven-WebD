@@ -5,9 +5,9 @@ $(document).ready(function() {
 				$("#arr").hide();
 				$("#title").fadeIn(3500);
 				$("#motto").hide();
-				$("#motto").fadeIn(12000);
+				$("#motto").fadeIn(14000);
 				$("#logo,#one,#two,#three").hide();
-				$("#logo,#one,#two,#three").fadeIn(10000);
+				$("#logo,#one,#two,#three").fadeIn(15000);
 
 
 				function bgchange() {
