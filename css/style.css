@@ -115,7 +115,7 @@ Navigation bar
 Banner
 ************************************/
 .banner{
-	background: url('../img/bg-banner.jpg') no-repeat center top;
+	/*background: url('../img/bg-banner.jpg') no-repeat center top;*/
     background-size: cover;
 	min-height: 580px;
     position: relative;
@@ -135,24 +135,28 @@ Banner
 	border: 5px solid #5FCF80;
 	display: inline-block;
 	margin-top: 150px;
+    border-radius:50px;
 }
 .text-border1{
     border: 5px solid #5FCF80;
     display: block;
     margin-top: 0px;
     height: 400px;
+    border-radius:50px;
 }
 .text-border2{
     border: 5px solid #5FCF80;
     display: block;
     margin-top: 0px;
     height: 400px;
+    border-radius:50px;
 }
 .text-border3{
     border: 5px solid #5FCF80;
     display: block;
     margin-top: 0px;
     height: 400px;
+    border-radius:50px;
 }
 .intro-para{
 	font-family: 'Alegreya Sans', sans-serif;
@@ -896,6 +900,12 @@ Responsive media queries
     border-left-color:#5CC9DF;
 }
 
+.coordi:hover{
+-moz-transform: scale(108);
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+}
+
 .member-content.right:hover .details:after {
     border-left-color:transparent;
     border-right-color:#5CC9DF;
@@ -942,130 +952,260 @@ Responsive media queries
     box-shadow:0 3px 0 0 rgba(0,0,0,0.05);
 }
 
-/* Members Flip cards*/
-@media (min-width: 1200px)
-#members {
-    width: 1270px;
+
+.btn:hover,
+.btn:focus,
+.btn:active{
+    outline: 0 !important;
+}
+/* entire container, keeps perspective */
+.card-container {
+      -webkit-perspective: 800px;
+   -moz-perspective: 800px;
+     -o-perspective: 800px;
+        perspective: 800px;
+        margin-bottom: 30px;
+}
+/* flip the pane when hovered */
+.card-container:not(.manual-flip):hover .card,
+.card-container.hover.manual-flip .card{
+    -webkit-transform: rotateY( 180deg );
+-moz-transform: rotateY( 180deg );
+ -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
 }
 
-#members {
-  margin: 10vh auto;
-  justify-content: center;
-  display: flex;
+
+.card-container.static:hover .card,
+.card-container.static.hover .card {
+    -webkit-transform: none;
+-moz-transform: none;
+ -o-transform: none;
+    transform: none;
 }
-#members-main {
-  display: flex;
-  margin: 1em;
-  transition: 0.5s all ease;
-  transform-style: preserve-3d;
-  position: relative;
-  cursor: pointer;
-  width: 33.3%;
-  min-width: 200px;
-  max-width: 250px;
-  height: 410px;
-  box-shadow: 1px 1px 5px #000;
+/* flip speed goes here */
+.card {
+     -webkit-transition: -webkit-transform .5s;
+   -moz-transition: -moz-transform .5s;
+     -o-transition: -o-transform .5s;
+        transition: transform .5s;
+-webkit-transform-style: preserve-3d;
+   -moz-transform-style: preserve-3d;
+     -o-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    position: relative;
 }
 
-#members-main .front,
-#members-main .back {
-  background: #0FA0D0;
-  position: absolute;
-  width: 100%;
-  min-width: 200px;
-  max-width: 350px;
-  height: 410px;
-  transition: 0.5s all ease;
-  transform-style: preserve-3d;
-  transform: rotateY(0deg);
-  backface-visibility: hidden;
+/* hide back of pane during swap */
+.front, .back {
+    -webkit-backface-visibility: hidden;
+   -moz-backface-visibility: hidden;
+     -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #FFF;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
 }
-#members-main .front .data-wrapper,
-#members-main .back .data-wrapper {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 140px;
-  background: #fff;
-  color: #ccc;
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
 }
-#members-main .front .data-wrapper .data,
-#members-main .back .data-wrapper .data {
-  color: #000;
-  width: 80%;
-  margin: 2em auto;
+
+/* back, initially hidden pane */
+.back {
+        -webkit-transform: rotateY( 180deg );
+   -moz-transform: rotateY( 180deg );
+     -o-transform: rotateY( 180deg );
+        transform: rotateY( 180deg );
+        z-index: 3;
 }
-#members-main .front .data-wrapper .data .title,
-#members-main .back .data-wrapper .data .title {
-  font-weight: bold;
-  font-size: 18px;
+
+.back .btn-simple{
+    position: absolute;
+    left: 0;
+    bottom: 4px;
 }
-#members-main .front .data-wrapper .circle,
-#members-main .back .data-wrapper .circle {
-  color: #fff;
-  position: absolute;
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  line-height: 50px;
-  text-align: center;
-  font-weight: bold;
-  background: #019875;
-  top: -1.5em;
-  left: 40%;
+/*        Style       */
+
+
+.card{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 4px;
+    color: #444444;
 }
-#members-main .icon {
-  font-size: 10em;
-  padding: 0.2em 0 0 0;
+.card-container, .front, .back {
+    width: 100%;
+    height: 420px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
+-moz-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
+box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.16);
 }
-#members-main .front {
-  text-align: center;
-  color: #fff;
+.card .cover{
+    height: 105px;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
 }
-#members-main h2{
-    color: #080808;
+.card .cover img{
+    width: 100%;
 }
-#members-main .back {
-  color: #fff;
-  transform: rotateY(180deg);
+.card .user{
+    border-radius: 50%;
+    display: block;
+    height: 120px;
+    margin: -55px auto 0;
+    overflow: hidden;
+    width: 120px;
 }
-#members-main .back .social {
-  width: auto;
-  bottom: 0;
-  margin: auto;
-  text-align: center;
+.card .user img{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 4px solid #FFFFFF;
+    width: 100%;
 }
-#members-main .back .social i {
-  margin: 5px;
+
+.card .content{
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    padding: 10px 20px 20px;
 }
-#members-main .back .skills {
-  margin: 0 auto;
-  text-align: center;
-  padding: 1.5em;
+.card .content .main {
+    min-height: 160px;
 }
-#members-main .back .skills .skill-ele {
-  height: 50px;
-  line-height: 50px;
-  overflow: hidden;
-  position: relative;
+.card .back .content .main {
+    height: 215px;
 }
-#members-main .back .skills .skill-ele:hover .stars {
-  left: 0;
+.card .name {
+        font-family: 'Arima Madurai', cursive;
+    font-size: 22px;
+    line-height: 28px;
+    margin: 10px 0 0;
+    text-align: center;
+    text-transform: capitalize;
 }
-#members-main .back .skills .skill-ele .stars {
-  transition: 0.5s all ease;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  background: #545353;
-  position: absolute;
-  left: -100%;
-  color: #ffd700;
+.card h5{
+    margin: 5px 0;
+    font-weight: 400;
+    line-height: 20px;
 }
-#members-main:hover .front {
-  transform: rotateY(180deg);
-  z-index: 2;
+.card .profession{
+    color: #999999;
+    text-align: center;
+    margin-bottom: 20px;
 }
-#members-main:hover .back {
-  transform: rotateY(0deg);
+.card .footer {
+    border-top: 1px solid #EEEEEE;
+    color: #999999;
+    margin: 30px 0 0;
+    padding: 10px 0 0;
+    text-align: center;
+}
+.card .footer .social-links{
+    font-size: 18px;
+}
+.card .footer .social-links a{
+    margin: 0 7px;
+}
+.card .footer .btn-simple{
+    margin-top: -6px;
+}
+.card .header {
+    padding: 15px 20px;
+    height: 90px;
+}
+.card .motto{
+        font-family: 'Arima Madurai', cursive;
+    border-bottom: 1px solid #EEEEEE;
+    color: #999999;
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.card .stats-container{
+    width: 100%;
+    margin-top: 50px;
+}
+.card .stats{
+    display: block;
+    float: left;
+    width: 33.333333%;
+    text-align: center;
+}
+
+.card .stats:first-child{
+    border-right: 1px solid #EEEEEE;
+}
+.card .stats:last-child{
+    border-left: 1px solid #EEEEEE;
+}
+.card .stats h4{
+        font-family: 'Arima Madurai', cursive;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+.card .stats p{
+    color: #777777;
+}
+/*      Just for presentation        */
+
+.title{
+    color: #506A85;
+    text-align: center;
+    font-weight: 300;
+    font-size: 44px;
+    margin-bottom: 90px;
+    line-height: 90%;
+}
+.title small{
+    font-size: 17px;
+    color: #999;
+    text-transform: uppercase;
+    margin: 0;
+}
+.space-30{
+    height: 30px;
+    display: block;
+}
+.space-50{
+    height: 50px;
+    display: block;
+}
+.space-200{
+    height: 200px;
+    display: block;
+}
+.white-board{
+    background-color: #FFFFFF;
+    min-height: 200px;
+    padding: 60px 60px 20px;
+}
+.ct-heart{
+    color: #F74933;
+}
+
+ pre.prettyprint{
+    background-color: #ffffff;
+    border: 1px solid #999;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: left;
+}
+.atv, .str{
+    color: #05AE0E;
+}
+.tag, .pln, .kwd{
+     color: #3472F7;
+}
+.atn{
+  color: #2C93FF;
+}
+.pln{
+   color: #333;
+}
+.com{
+    color: #999;
 }
