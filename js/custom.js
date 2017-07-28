@@ -26,15 +26,14 @@
       }
     });
 
-    var images = ['https://albanylawtech.files.wordpress.com/2011/03/class.jpg', 'https://www.robosapi.com/assets/images/workshops/web-designing/web-designing-course-details.jpg'
-    , 'http://media.zzpservicedesk.nl/cad7e4c8f165a65b44bdf172210766e1.jpg', 'http://kepran.com/wp-content/uploads/2016/03/Web-Application-Development.jpg'];
+    var images = ['https://albanylawtech.files.wordpress.com/2011/03/class.jpg', 'http://media.zzpservicedesk.nl/cad7e4c8f165a65b44bdf172210766e1.jpg', 'http://kepran.com/wp-content/uploads/2016/03/Web-Application-Development.jpg'];
     var random_img = images[Math.floor(Math.random() * images.length)];
     console.log(random_img);
     console.log('url("GeekHaven-WebD/img/' + random_img+ '") no-repeat center top');
 
     $(".banner").css('background', 'url('+random_img+') no-repeat center top');
 
-    var colors = ['#FCD309', '#f6546a', '#0000ff', '#f42a04', '#d0a0ff', '#ff8000', '#FC9100'];
+    var colors = ['#FCD309', '#f6546a', '#f42a04', '#d0a0ff', '#ff8000', '#FC9100'];
     var random_color = colors[Math.floor(Math.random() * colors.length)];
     var random_color1 = colors[Math.floor(Math.random() * colors.length)];
 
